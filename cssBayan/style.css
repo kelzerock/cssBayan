@@ -24,7 +24,9 @@
   padding: 1.2em;
   z-index: 2;
 }
-.accordion:hover .accordion_trigger{
+.accordion:hover .accordion_trigger,
+.accordion:hover {
+  cursor: pointer;
   color: #ddd;
   font-weight: 600;
 }
@@ -32,7 +34,7 @@
   background-color: #187a00;
 }
 .accordion_toggle {
-  position: absolute;
+  /* position: absolute; */
   display: none;
   margin: 0;
 }
@@ -43,9 +45,9 @@
   margin: -1px;
   overflow: hidden;
   padding: 0;
-  position: absolute;
+  /* position: absolute; */
   width: 1px;
-  background-color: #ddd;
+  /* background-color: #ddd; */
   color: #444;
   z-index: 1;
   background-repeat: no-repeat;
@@ -61,7 +63,7 @@
   margin: auto;
   padding: 1.2rem;
   width: auto;
-  height: 20rem;
+  height: 20vh;
   -webkit-animation: flyMessage ease-in 0.5s;
   -moz-animation: flyMessage ease-in 0.5s;
   animation: flyMessage ease-in 0.5s;
