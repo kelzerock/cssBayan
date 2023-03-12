@@ -48,6 +48,10 @@
   background-color: #ddd;
   color: #444;
   z-index: 1;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  max-height: 300px;
 }
 .accordion_toggle:checked~.accordion_target,
 .accordion_toggle:hover~.accordion_target {
@@ -57,7 +61,7 @@
   margin: auto;
   padding: 1.2rem;
   width: auto;
-  height: auto;
+  height: 20rem;
   -webkit-animation: flyMessage ease-in 0.5s;
   -moz-animation: flyMessage ease-in 0.5s;
   animation: flyMessage ease-in 0.5s;
