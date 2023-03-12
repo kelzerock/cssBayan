@@ -23,7 +23,23 @@
   cursor: pointer;
   padding: 1.2em;
   z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+.accordion-span {
+  display: none;
+  font-weight: 700;
+  font-size: 2rem;
+}
+.accordion:hover .accordion-span {
+  display: block;
+}
+.accordion_trigger:hover .accordion-span,
+.accordion_toggle:checked~.accordion_trigger .accordion-span {
+  transform: rotate(45deg);
+}
+
 .accordion:hover .accordion_trigger,
 .accordion:hover {
   cursor: pointer;
