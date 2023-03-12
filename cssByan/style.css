@@ -1,0 +1,100 @@
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+.accordion {
+  margin: 0;
+  margin-bottom: 1.5rem;
+  padding: 0;
+  list-style: none;
+  border: solid rgb(0, 63, 5) 2px;
+}
+.accordion_item {
+  border-bottom: 1px solid #4cc552;
+}
+.accordion_item:last-of-type {
+  border-bottom: none;
+}
+.accordion_trigger {
+  display: block;
+  background-color: #00cf00;
+  color: #111;
+  font-weight: normal;
+  cursor: pointer;
+  padding: 1.2em;
+  z-index: 2;
+}
+.accordion:hover .accordion_trigger{
+  color: #ddd;
+  font-weight: 600;
+}
+.accordion_toggle:checked~.accordion_trigger {
+  background-color: #187a00;
+}
+.accordion_toggle {
+  position: absolute;
+  display: none;
+  margin: 0;
+}
+.accordion_target {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  background-color: #ddd;
+  color: #444;
+  z-index: 1;
+}
+.accordion_toggle:checked~.accordion_target,
+.accordion_toggle:hover~.accordion_target {
+  position: static;
+  overflow: visible;
+  clip: auto;
+  margin: auto;
+  padding: 1.2rem;
+  width: auto;
+  height: auto;
+  -webkit-animation: flyMessage ease-in 0.5s;
+  -moz-animation: flyMessage ease-in 0.5s;
+  animation: flyMessage ease-in 0.5s;
+}
+
+@-moz-keyframes flyMessage {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1)
+  }
+}
+
+@-webkit-keyframes flyMessage {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1)
+  }
+}
+
+@keyframes flyMessage {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1)
+  }
+}
