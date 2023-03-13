@@ -14,9 +14,11 @@
   padding: 0;
   list-style: none;
   border: solid rgb(0, 63, 5) 2px;
+  border-radius: 10px;
+  overflow: hidden;
 }
 .accordion_item {
-  border-bottom: 1px solid #4cc552;
+
 }
 .accordion_item:last-of-type {
   border-bottom: none;
@@ -29,17 +31,30 @@
   cursor: pointer;
   padding: 1.2em;
   z-index: 2;
+  border: solid 2px white;
+  border-radius: 5px;
+}
+.title {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+}
+.accordion-p {
 }
 .accordion-span {
+  width: 1.1rem;
+  height: 1.1rem;
   display: none;
   font-weight: 700;
-  font-size: 2rem;
+  border: black 2px solid;
+  border-radius: 50%;
+  transition: ease-in-out all .5s;
 }
 .accordion:hover .accordion-span {
-  display: block;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  color: black;
 }
 .accordion_trigger:hover .accordion-span,
 .accordion_toggle:checked~.accordion_trigger .accordion-span {
@@ -49,7 +64,7 @@
 .accordion:hover .accordion_trigger,
 .accordion:hover {
   cursor: pointer;
-  color: #ddd;
+  color: #0f3f97;
   font-weight: 600;
 }
 .accordion_toggle:checked~.accordion_trigger {
@@ -63,8 +78,8 @@
 .accordion_target {
   border: 0;
   clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
+  height: 0vh;
+  margin: 0;
   overflow: hidden;
   padding: 0;
   /* position: absolute; */
@@ -78,13 +93,12 @@
   max-height: 300px;
   transition: ease-in-out all 1s;
 }
-.accordion_toggle:checked~.accordion_target,
-.accordion_toggle:hover~.accordion_target {
+.accordion_toggle:checked~.accordion_trigger .accordion_target,
+.accordion_toggle:hover~.accordion_trigger .accordion_target {
   position: static;
   overflow: visible;
   clip: auto;
   margin: auto;
-  padding: 1.2rem;
   width: auto;
   height: 20vh;
   -webkit-animation: flyMessage ease-in 0.5s;
@@ -92,7 +106,7 @@
   animation: flyMessage ease-in 0.5s;
 }
 
-@-moz-keyframes flyMessage {
+/* @-moz-keyframes flyMessage {
   from {
     opacity: 0;
     transform: scale(0);
@@ -126,4 +140,35 @@
     opacity: 1;
     transform: scale(1)
   }
-}
+} */
+
+
+/* Mobile */
+@media (max-width: 480px) {
+  html {
+  font-size: 14px;
+  }
+  .wrapper {
+    width: 98%;
+  }
+  }
+  
+  /* Tablet */
+  @media (min-width: 481px) and (max-width: 1179px) {
+  html {
+  font-size: 18px;
+  }
+  .wrapper {
+    max-width: 90%;
+  }
+  }
+  
+  /* Desktop */
+  @media (min-width: 1180px) {
+  html {
+  font-size: 20px;
+  }
+  .wrapper {
+    max-width: 50%;
+  }
+  }
